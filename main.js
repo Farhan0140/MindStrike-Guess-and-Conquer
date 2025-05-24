@@ -35,33 +35,52 @@ function call_fun(callback) {
 
 
 
+let level = 1;
+
+
+
 attack.addEventListener("click", () => {
     const rand = Math.floor(Math.random() * 100) + 1;
 
+    let track_enemy_accuracy;
+
     call_fun((val) => {
-        let player_diff = Math.abs(rand - val);
-        let player_accuracy = Math.round( (1 - (player_diff / 100)) * 100 );
-        let current_enemy_life = enemy_life.ariaValueNow;
-        
-        current_enemy_life -= player_accuracy;
-
-        enemy_life.ariaValueNow = current_enemy_life;
-
-        if(enemy_life.ariaValueNow <= 0) {
-            enemy_life.style.width = `${0}%`;
-            window.location.replace("win.html");
-            return;
-        } else {
-            const x = Math.floor((enemy_life.ariaValueNow / enemy_life.ariaValueMax) * 100);
-            enemy_life.style.width = `${x}%`;
-            enemy_life.innerText = enemy_life.ariaValueNow;
-            massage.innerText = `You Attack enemy with power ${player_accuracy}`;
-        }
-
-
         call(rand, (val) => {
             let current_player_life = player_life.ariaValueNow;
-            current_player_life -= val;
+                
+            if(level == 1) {
+                if(val >= 20) {
+                    current_player_life -= 20;
+                    track_enemy_accuracy = 20;
+                } else {
+                    current_player_life -= val;
+                    track_enemy_accuracy = val;
+                }
+            } else if(level == 2) {
+                if(val >= 40) {
+                    current_player_life -= 40;
+                    track_enemy_accuracy = 40;
+                } else {
+                    current_player_life -= val;
+                    track_enemy_accuracy = val;
+                }
+            } else if(level == 3) {
+                if(val >= 60) {
+                    current_player_life -= 60;
+                    track_enemy_accuracy = 60;
+                } else {
+                    current_player_life -= val;
+                    track_enemy_accuracy = val;
+                }
+            } else if(level == 4) {
+                if(val >= 100) {
+                    current_player_life -= 100;
+                    track_enemy_accuracy = 100;
+                } else {
+                    current_player_life -= val;
+                    track_enemy_accuracy = val;
+                }
+            }
 
             player_life.ariaValueNow = current_player_life;
 
@@ -72,12 +91,102 @@ attack.addEventListener("click", () => {
                 const x = Math.floor((player_life.ariaValueNow / player_life.ariaValueMax) * 100);
                 player_life.style.width = `${x}%`;
                 player_life.innerText = player_life.ariaValueNow;
-                massage.innerText += ` (-_-) Enemy Attack you with power ${val}`;
             }
+
+            document.getElementById("player").style.backgroundColor = 'rgb(250, 158, 158)';
         });
+
+        let player_diff = Math.abs(rand - val);
+        let player_accuracy = Math.round( (1 - (player_diff / 100)) * 100 );
+        let current_enemy_life = enemy_life.ariaValueNow;
+        
+        current_enemy_life -= player_accuracy;
+        
+        enemy_life.ariaValueNow = current_enemy_life;
+
+        if(enemy_life.ariaValueNow <= 0) {
+
+            enemy_life.style.width = `${0}%`;
+            massage.innerText = `You Won Level ${level}\n`;
+            level++;
+
+            document.getElementById("level-track").innerText = level;
+
+            if(level == 1) {
+
+                
+                enemy_life.ariaValueMax = 50;
+                enemy_life.ariaValueNow = 50;
+                enemy_life.innerText = "50";
+                enemy_life.style.width = "100%";
+
+                document.getElementById("player").style.backgroundColor = 'rgb(235, 235, 235)';
+                document.getElementById("enemy").style.backgroundColor = 'rgb(235, 235, 235)';
+                
+                
+            } else if(level == 2) {
+                
+                document.getElementById('enemy-img').src = 'Images/image.jpg';
+                enemy_life.ariaValueMax = 100;
+                enemy_life.ariaValueNow = 100;
+                enemy_life.innerText = "100";
+                enemy_life.style.width = "100%";
+
+                document.getElementById("player").style.backgroundColor = 'rgb(235, 235, 235)';
+                document.getElementById("enemy").style.backgroundColor = 'rgb(235, 235, 235)';
+                
+            } else if(level == 3) {
+                
+                document.getElementById('enemy-img').src = 'Images/Kargalgan1.jpg';
+                enemy_life.ariaValueMax = 200;
+                enemy_life.ariaValueNow = 200;
+                enemy_life.innerText = "200";
+                enemy_life.style.width = "100%";
+
+                document.getElementById("player").style.backgroundColor = 'rgb(235, 235, 235)';
+                document.getElementById("enemy").style.backgroundColor = 'rgb(235, 235, 235)';
+                
+            } else if(level == 3) {
+                
+                enemy_life.ariaValueMax = 300;
+                enemy_life.ariaValueNow = 300;
+                enemy_life.innerText = "300";
+                enemy_life.style.width = "100%";
+
+                document.getElementById("player").style.backgroundColor = 'rgb(235, 235, 235)';
+                document.getElementById("enemy").style.backgroundColor = 'rgb(235, 235, 235)';
+                
+            } else if(level == 4) {
+                
+                enemy_life.ariaValueMax = 500;
+                enemy_life.ariaValueNow = 500;
+                enemy_life.innerText = "500";
+                enemy_life.style.width = "100%";
+
+                document.getElementById("player").style.backgroundColor = 'rgb(235, 235, 235)';
+                document.getElementById("enemy").style.backgroundColor = 'rgb(235, 235, 235)';
+                
+            } else {
+                window.location.replace("win.html");
+                return;
+            }
+
+            
+        } else {
+            
+            const x = Math.floor((enemy_life.ariaValueNow / enemy_life.ariaValueMax) * 100);
+            enemy_life.style.width = `${x}%`;
+            enemy_life.innerText = enemy_life.ariaValueNow;
+            massage.innerText = `You Attack enemy with power ${player_accuracy} (-_-) Enemy Attack you with power ${track_enemy_accuracy}`;
+
+            document.getElementById("enemy").style.backgroundColor = 'rgb(250, 158, 158)';
+        }
+        
         
     });
-    
+
+    document.getElementById("player").style.border = "none";
+    document.getElementById("player").style.backgroundColor = 'rgb(235, 235, 235)';
 
 });
 
@@ -91,12 +200,24 @@ function call(rand, callback) {
 };
 
 
+let defend_times = 5;
+
+
 defend.addEventListener("click", () => {
+    defend_times--;
+    document.getElementById("defend-cnt").innerText = defend_times;
+
     const rand = Math.floor(Math.random() * 100) + 1;
 
     call(rand, (val) => {
-        massage.innerText = `You Defend Enemy's Attack (-_-) Enemy Attack you with power ${val}`;   
+        massage.innerText = `You Defend Enemy's Attack (-_-) Enemy Attack you with power ${val}`;
+        document.getElementById("player").style.border = "3px dashed black";
     });
+
+    if(defend_times <= 0) {
+        document.getElementById("defend").disabled  = true;
+    }
+    document.getElementById("player").style.backgroundColor = 'rgb(235, 235, 235)';
 });
 
 
@@ -133,9 +254,13 @@ heal.addEventListener("click", () => {
             player_life.innerText = player_life.ariaValueNow;
         }
 
+        document.getElementById("player").style.backgroundColor = 'rgb(169, 255, 174)';
+
     });
 
     if(heal_times <= 0) {
         document.getElementById("heal").disabled  = true;
-    }
+    };
+
+    document.getElementById("player").style.border = "none";
 });

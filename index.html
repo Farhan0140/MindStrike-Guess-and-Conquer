@@ -38,11 +38,12 @@
     <!--  -->
 
     <div id="main-container" class="main-container row">
+        <h1 class="text-center">Level <span id="level-track"> 1 </span></h1>
         <h3 id="massage" style="text-align: center;">Welcome to the New Gen number guessing game</h3>
         <div id="player" class="player col-5">
 
             <div class="progress mt-4">
-                <div id="player-life" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="200" aria-valuemin="0" aria-valuemax="200" style="width:100%">200</div>
+                <div id="player-life" class="progress-bar bg-success" role="progressbar" aria-valuenow="200" aria-valuemin="0" aria-valuemax="200" style="width:100%">200</div>
             </div>
 
             <div class="player_details">
@@ -53,10 +54,15 @@
                 
             </div>
 
-            <div class="buttons mt-5">
+            <div class="buttons">
                 <button id="attack" type="button" class="btn btn-danger m-1">Attack</button>
-                <button id="defend" type="button" class="btn btn-info m-1">Defend</button>
-                <button id="heal" type="button" class="btn btn-success position-relative">
+                <button id="defend" type="button" class="btn btn-info position-relative m-1">
+                    Defend
+                    <span id="defend-cnt" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        5
+                    </span>
+                </button>
+                <button id="heal" type="button" class="btn btn-success position-relative m-1">
                     Heal
                     <span id="heal-cnt" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         3
@@ -78,11 +84,11 @@
         <div id="enemy" class="enemy col-5">
 
             <div class="progress mt-4">
-                <div id="enemy-life" class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="200" aria-valuemin="0" aria-valuemax="200" style="width: 100%">200</div>
+                <div id="enemy-life" class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50" style="width: 100%">50</div>
             </div>
 
             <div class="enemy-image">
-                <img src="Images/Animation - 1747934139498.gif" alt="">
+                <img id="enemy-img" src="Images/Animation - 1747934139498.gif" alt="">
             </div>
         </div>
     </div>
