@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You Lost</title>
+  <style>
+    body {
+      background-color: #f4f4f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .message-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 40px 60px;
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .message-box h1 {
+      color: #f44336;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .message-box p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .message-box .icon {
+      font-size: 3rem;
+      color: #f44336;
+      margin-bottom: 20px;
+    }
+
+    .play-again-btn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .play-again-btn:hover {
+      background-color: #d32f2f;
+    }
+
+    .github-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+
+    .github-link:hover {
+      color: #000;
+      transform: scale(1.05);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="message-box">
+    <div class="icon">😔</div>
+    <h1>Game Over</h1>
+    <p>The dragon has a better brain than you.. That’s okay — every try is a step forward. Thank you for playing.</p>
+    <a class="play-again-btn" href="index.html">Try Again</a><br>
+    <a class="github-link" href="" target="_blank">⭐ Rate this on GitHub</a>
+  </div>
+</body>
+</html>
