@@ -1,0 +1,92 @@
+
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* border: 1px solid black; */
+}
+
+
+.player, .enemy {
+    height: 75%;
+    margin: 10px;
+    border-radius: 15px;
+    
+    /* position: absolute; */
+    background-color: rgb(235, 235, 235);
+    /* border: 1px dotted black; */
+}
+
+.player_details {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-image, .enemy-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+
+}
+
+.enemy-image {
+    width: 100%;
+}
+
+.player-image > img {
+    width: 100%;
+}
+
+
+.enemy-image > img {
+    width: 80%;
+}
+
+.progress {
+    background-color: rgb(146, 146, 146);
+    height: 30px;
+    font-size: 25px;
+}
+
+.input-div {
+    visibility: hidden;
+    border: 2px solid black;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: cadetblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#guessed-number, #Save {
+    width: 100%;
+    margin: 10px;
+}
+
+
+
+@if $enable-transitions {
+  @keyframes progress-bar-stripes {
+      0% { background-position-x: $progress-height; }
+    }
+}
