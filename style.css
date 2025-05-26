@@ -122,6 +122,19 @@ body {
     justify-content: center;
 }
 
+#attack:hover, #defend:hover, #heal:hover, #Save:hover {
+    /* transform: scale(1.2); */
+    transform: scale(1.1);
+}
+
+#attack:active, #defend:active, #heal:active, #Save:active {
+    transform: scale(0.4);
+}
+
+#attack, #defend, #heal, #Save {
+    transition: all 0.1s linear;
+}
+
 
 
 
