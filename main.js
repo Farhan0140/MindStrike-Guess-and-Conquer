@@ -975,19 +975,19 @@ heal.addEventListener("click", () => {
             current_player_life += (player_accuracy + 50);
             x = 50;
         } else if(level == 6) {
-            current_player_life += (player_accuracy + 100);
+            current_player_life += (player_accuracy + 150);
             x = 100;
         } else if(level == 7) {
             current_player_life += (player_accuracy + 200);
             x = 200;
         } else if(level == 8) {
-            current_player_life += (player_accuracy + 300);
+            current_player_life += (player_accuracy + 250);
             x = 300;
         } else if(level == 9) {
-            current_player_life += (player_accuracy + 400);
+            current_player_life += (player_accuracy + 300);
             x = 400;
         } else if(level == 10) {
-            current_player_life += (player_accuracy + 500);
+            current_player_life += (player_accuracy + 350);
             x = 500;
         } else {
             current_player_life += player_accuracy;
