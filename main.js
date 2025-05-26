@@ -154,16 +154,16 @@ attack.addEventListener("click", () => {
                 }
             } else if(level == 8) {
                 if(val >= 80) {
-                    current_player_life -= 80;
-                    track_enemy_accuracy = 80;
+                    current_player_life -= 100;
+                    track_enemy_accuracy = 100;
                 } else {
                     current_player_life -= val;
                     track_enemy_accuracy = val;
                 }
             } else if(level == 9) {
                 if(val >= 90) {
-                    current_player_life -= 90;
-                    track_enemy_accuracy = 90;
+                    current_player_life -= 100;
+                    track_enemy_accuracy = 100;
                 } else {
                     current_player_life -= val;
                     track_enemy_accuracy = val;
