@@ -1,3 +1,30 @@
+
+
+const preloadedImages = {};
+
+const imagePaths = {
+    2: 'Images/2.jpg',
+    3: 'Images/3.jpg',
+    4: 'Images/4.jpg',
+    5: 'Images/5.jpg',
+    6: 'Images/6.jpg',
+    7: 'Images/7.jpg',
+    8: 'Images/8.jpg',
+    9: 'Images/9.jpg',
+    10: 'Images/10.jpg'
+};
+
+
+for (const level in imagePaths) {
+
+    const img = new Image();
+    img.src = imagePaths[level];
+    preloadedImages[level] = img;
+
+}
+
+
+
 let defend_times = 10;
 let heal_times = 10;
 
@@ -190,7 +217,15 @@ attack.addEventListener("click", () => {
                 
             } else if(level == 2) {
                 
-                document.getElementById('enemy-img').src = 'Images/2.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[2];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/2.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Nightfang the Harbinger';
                 
                 const body = document.querySelector("body");
@@ -218,7 +253,15 @@ attack.addEventListener("click", () => {
                 
             } else if(level == 3) {
 
-                document.getElementById('enemy-img').src = 'Images/3.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[3];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/3.jpg';
+                }
+                
                 document.getElementById('enemy-name').innerText = 'Crimson Seraphim';
                 
                 const body = document.querySelector("body");
@@ -245,7 +288,16 @@ attack.addEventListener("click", () => {
                 document.getElementById("player").style.backgroundColor = 'rgb(235, 235, 235)';
             } else if(level == 4) {
 
-                document.getElementById('enemy-img').src = 'Images/4.jpg';
+                
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[4];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/4.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Nocthare';
                 
                 const body = document.querySelector("body");
@@ -272,8 +324,16 @@ attack.addEventListener("click", () => {
                 document.getElementById("player").style.backgroundColor = 'rgb(235, 235, 235)';
                 
             } else if(level == 5) {
+                
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[5];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/5.jpg';
+                }
 
-                document.getElementById('enemy-img').src = 'Images/5.jpg';
                 document.getElementById('enemy-name').innerText = 'Voidflare the Abyss Reaver';
                 
                 const body = document.querySelector("body");
@@ -301,7 +361,15 @@ attack.addEventListener("click", () => {
                 
             } else if(level == 6) {
 
-                document.getElementById('enemy-img').src = 'Images/6.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[6];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/6.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Voidflame';
                 
                 const body = document.querySelector("body");
@@ -329,7 +397,15 @@ attack.addEventListener("click", () => {
                 
             } else if(level == 7) {
 
-                document.getElementById('enemy-img').src = 'Images/7.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[7];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/7.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Bloodshade';
                 
                 const body = document.querySelector("body");
@@ -357,7 +433,15 @@ attack.addEventListener("click", () => {
                 
             } else if(level == 8) {
 
-                document.getElementById('enemy-img').src = 'Images/8.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[8];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/8.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Seraphmortis';
                 
                 const body = document.querySelector("body");
@@ -385,7 +469,15 @@ attack.addEventListener("click", () => {
                 
             } else if(level == 9) {
 
-                document.getElementById('enemy-img').src = 'Images/9.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[9];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/9.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Nyxion';
                 
                 const body = document.querySelector("body");
@@ -413,7 +505,15 @@ attack.addEventListener("click", () => {
                 
             } else if(level == 10) {
 
-                document.getElementById('enemy-img').src = 'Images/10.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[10];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/10.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Abyssus';
                 
                 const body = document.querySelector("body");
@@ -510,7 +610,15 @@ defend.addEventListener("click", () => {
                 
             } else if(level == 2) {
                 
-                document.getElementById('enemy-img').src = 'Images/2.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[2];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/2.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Nightfang the Harbinger';
                 
                 const body = document.querySelector("body");
@@ -538,7 +646,15 @@ defend.addEventListener("click", () => {
                 
             } else if(level == 3) {
 
-                document.getElementById('enemy-img').src = 'Images/3.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[3];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/3.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Crimson Seraphim';
                 
                 const body = document.querySelector("body");
@@ -565,7 +681,15 @@ defend.addEventListener("click", () => {
                 document.getElementById("player").style.backgroundColor = 'rgb(235, 235, 235)';
             } else if(level == 4) {
 
-                document.getElementById('enemy-img').src = 'Images/4.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[4];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/4.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Nocthare';
                 
                 const body = document.querySelector("body");
@@ -593,7 +717,15 @@ defend.addEventListener("click", () => {
                 
             } else if(level == 5) {
 
-                document.getElementById('enemy-img').src = 'Images/5.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[5];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/5.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Voidflare the Abyss Reaver';
                 
                 const body = document.querySelector("body");
@@ -621,7 +753,15 @@ defend.addEventListener("click", () => {
                 
             } else if(level == 6) {
 
-                document.getElementById('enemy-img').src = 'Images/6.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[6];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/5.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Voidflame';
                 
                 const body = document.querySelector("body");
@@ -649,7 +789,15 @@ defend.addEventListener("click", () => {
                 
             } else if(level == 7) {
 
-                document.getElementById('enemy-img').src = 'Images/7.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[7];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/7.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Bloodshade';
                 
                 const body = document.querySelector("body");
@@ -677,7 +825,15 @@ defend.addEventListener("click", () => {
                 
             } else if(level == 8) {
 
-                document.getElementById('enemy-img').src = 'Images/8.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[8];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/8.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Seraphmortis';
                 
                 const body = document.querySelector("body");
@@ -705,7 +861,15 @@ defend.addEventListener("click", () => {
                 
             } else if(level == 9) {
 
-                document.getElementById('enemy-img').src = 'Images/9.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[9];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/9.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Nyxion';
                 
                 const body = document.querySelector("body");
@@ -733,7 +897,15 @@ defend.addEventListener("click", () => {
                 
             } else if(level == 10) {
 
-                document.getElementById('enemy-img').src = 'Images/10.jpg';
+                const enemyImg = document.getElementById('enemy-img');
+                const preloaded = preloadedImages[10];
+                
+                if (preloaded && preloaded.complete) {
+                    enemyImg.src = preloaded.src;
+                } else {
+                    enemyImg.src = 'Images/10.jpg';
+                }
+
                 document.getElementById('enemy-name').innerText = 'Abyssus';
                 
                 const body = document.querySelector("body");
