@@ -64,13 +64,14 @@ Each level introduces a new enemy with an image and increased difficulty.
 ## 🖼️ Image Preloading
 Images are preloaded using:
 <br>
+```
 const preloadedImages = {};
 const imagePaths = {
     2: 'Images/2.jpg',
     ...
     10: 'Images/10.jpg'
 };
-
+```
 
 ## 📁 File Structure
 ```
