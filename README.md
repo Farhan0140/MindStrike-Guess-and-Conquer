@@ -112,3 +112,6 @@ const imagePaths = {
 4. Progress through all 10 levels to beat the game.
 
 Happy battling! ⚔️
+
+## ⭐ **Star This Repository!**
+If you enjoy this game 😑, don't forget to **star** it!
