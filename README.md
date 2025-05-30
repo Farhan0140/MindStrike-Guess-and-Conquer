@@ -3,6 +3,10 @@
 
 Welcome to **MindStrike Guess and Conquer**, a number-guessing-based combat game! Fight your way through multiple enemies, level up, and use your strategic options to attack, defend, or heal. 
 
+## Live Link
+```
+https://farhan0140.github.io/MindStrike-Guess-and-Conquer/
+```
 ## 📦 Features
 - 🎯 Attack by guessing numbers between 1–100
 - 🛡️ Defend against enemy attacks (limited uses)
